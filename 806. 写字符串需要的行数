@@ -1,0 +1,34 @@
+def solution(widths, string):
+        row =1 #存储当前行数
+        temp_length = 0
+        for i in range(len(string)):
+            temp_length+=widths[ord(string[i])-ord('a')]
+            if temp_length<=100:
+                continue
+            else:
+                row +=1
+                temp_length = widths[ord(string[i])-ord('a')]
+        print (row,temp_length)
+widths = [10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10]
+string="abcdefghijklmnopqrstuvwxyz"    
+solution(widths, string)
+# 存储当前的行数
+# row =1
+#	temp_length = 0
+#	for s in string:
+#		temp_length += widths[ord(s) - ord('a')] 
+#
+#		# 如果行数在100之类继续加
+#		if temp_length <= 100:
+#			continue
+#
+#		# 否则的话，行数加1
+#		else:
+#			row += 1
+#			temp_length = widths[ord(s) - ord('a')]
+#	
+#	print (row, temp_length)
+#if __name__ == "__main__":
+#    widths = [10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10]
+#    string="abcdefghijklmnopqrstuvwxyz"
+#	solution(widths, string)
